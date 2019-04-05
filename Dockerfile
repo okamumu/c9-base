@@ -9,6 +9,7 @@ ENV C9PORT       8181
 RUN apt-get update
 RUN apt-get install -y \
     sudo \
+    nodejs npm \
     wget \
     curl \
     locales \
