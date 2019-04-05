@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 
 ENV C9UID        1000
+ENV C9GID        1000
 ENV C9USER       c9user
 ENV C9PASSWORD   c9user
 ENV C9HOME       /home/docker
@@ -9,6 +10,7 @@ ENV C9PORT       8181
 RUN apt-get update
 RUN apt-get install -y \
     sudo \
+    whois \
     nodejs npm \
     wget \
     curl \
