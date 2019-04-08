@@ -5,9 +5,9 @@ ENV C9USER       c9user
 ENV C9PASSWORD   c9user
 
 ENV C9GID        1000
-ENV C9GROUP      c9
+ENV C9GROUP      c9user
 
-ENV C9HOME       /home/$C9USER
+ENV C9HOME       /home/c9user
 ENV C9PORT       8181
 
 RUN apt-get update
