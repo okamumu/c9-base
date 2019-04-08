@@ -11,7 +11,7 @@ ENV C9HOME       /home/c9user
 ENV C9PORT       8181
 
 RUN apt-get update
-RUN apt-get install -y \
+RUN apt-get install -y --no-install-recommends \
     sudo \
     vim \
     whois \
