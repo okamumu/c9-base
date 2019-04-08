@@ -1,6 +1,7 @@
 #!/bin/sh
 
 mkdir -p $C9HOME
+groupadd -f -g $C9GID $C9GROUP
 useradd -d $C9HOME -u $C9UID -g $C9GID -p `echo "$C9PASSWORD" | mkpasswd -s -m sha-512` $C9USER &&\
   echo "$C9USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$C9USER
 
