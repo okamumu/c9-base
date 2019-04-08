@@ -10,20 +10,20 @@ ENV C9GROUP      c9user
 ENV C9HOME       /home/c9user
 ENV C9PORT       8181
 
-RUN apt-get update
-RUN apt-get install -y --no-install-recommends \
-    sudo \
-    vim \
-    whois \
-    nodejs npm \
-    wget \
-    curl \
-    locales \
-    build-essential \
-    python \
-    git
-RUN apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+RUN apt-get update &&\
+    apt-get install -y --no-install-recommends \
+      sudo \
+      vim \
+      whois \
+      nodejs npm \
+      wget \
+      curl \
+      locales \
+      build-essential \
+      python \
+      git &&\
+    apt-get clean &&\
+    rm -rf /var/lib/apt/lists/*
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8

@@ -1,9 +1,10 @@
 #!/bin/sh
 
-mkdir -p $C9HOME
 groupadd -f -g $C9GID $C9GROUP
 useradd -d $C9HOME -u $C9UID -g $C9GID -p `echo "$C9PASSWORD" | mkpasswd -s -m sha-512` $C9USER &&\
   echo "$C9USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$C9USER
+mkdir -p $C9HOME
+chown -R $C9USER:$C9GROUP $C9HOME
 
 if [ ! -d $C9HOME/.bash_logout ]; then
   su - $C9USER -c "cp /etc/skel/.bash_logout $C9HOME/.bash_logout"
