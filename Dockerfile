@@ -33,6 +33,5 @@ ENV LC_ALL en_US.UTF-8
 COPY ./entrypoint.sh /entrypoint.sh
 
 EXPOSE $C9PORT
-VOLUME $C9HOME
 
 ENTRYPOINT ["/entrypoint.sh"]
