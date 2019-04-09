@@ -26,4 +26,4 @@ if [ ! -d $C9HOME/cloud9 ]; then
 fi
 su - $C9USER -c "mkdir -p $C9HOME/workspace"
 
-su - $C9USER -c "PATH=$PATH $C9HOME/.c9/node/bin/node $C9HOME/cloud9/server.js -w $C9HOME/workspace -p $C9PORT -l 0.0.0.0 -a $C9USER:$C9PASSWORD --collab"
+su - $C9USER -c "PATH=$PATH $C9HOME/.c9/node/bin/node $C9HOME/cloud9/server.js -w $C9HOME/workspace -p $C9PORT -l 0.0.0.0 -a $C9USER:$C9PASSWORD"
