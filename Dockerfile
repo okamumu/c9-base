@@ -50,4 +50,4 @@ ENV C9GRANT_SUDO   yes
 
 EXPOSE $PM2PORT
 
-ENTRYPOINT ["/root/entrypoint.sh"]
+CMD ["/root/entrypoint.sh"]
