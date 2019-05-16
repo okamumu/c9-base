@@ -28,5 +28,6 @@ docker run --rm -it \
   -e C9HOME=/home/c9user \
   -e C9GROUP=c9user \
   -e C9GID=1000 \
+  -e C9PORT=8181 \
   -t okamumu/c9-base
 ```

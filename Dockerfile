@@ -27,12 +27,10 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-# install c9
+# copy scripts for c9 and install c9 to /etc/skel
+COPY ./c9mkhomedir_helper.sh /usr/local/bin/c9mkhomedir_helper.sh
 COPY ./c9install.sh /usr/local/bin/c9install.sh
 RUN HOME=/etc/skel c9install.sh
-
-COPY ./c9start.sh /usr/local/bin/c9start.sh
-COPY ./c9mkhomedir_helper.sh /usr/local/bin/c9mkhomedir_helper.sh
 
 ENV PM2PORT     80
 ENV PM2PASSWORD pm2
