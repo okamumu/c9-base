@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
-RUN apt-get update
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get update &&\
+    apt-get install -y --no-install-recommends \
       sudo \
       vim \
       whois \
@@ -12,15 +12,15 @@ RUN apt-get install -y --no-install-recommends \
       python \
       ca-certificates \
       tmux \
-      git
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
-RUN apt-get install -y --no-install-recommends nodejs npm
-RUN apt-get clean &&\
+      git &&\
+    curl -sL https://deb.nodesource.com/setup_6.x | bash - &&\
+    apt-get install -y --no-install-recommends nodejs npm &&\
+    apt-get clean &&\
     rm -rf /var/lib/apt/lists/*
 
 # Install pm2
-RUN npm install pm2 -g
-RUN npm install pm2-gui -g
+RUN npm install pm2 -g &&\
+    npm install pm2-gui -g
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
